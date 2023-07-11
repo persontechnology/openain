@@ -2,16 +2,16 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Listado de C.U
+            LIST OF USER STORIES CASES
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table text-center">
                     <thead>
                         <tr>
-                            <th scope="col">CASO</th>
-                            <th scope="col">VER TABLA</th>
-                            <th scope="col">ELIMINAR</th>
+                            <th scope="col">CASE</th>
+                            <th scope="col">SEE TABLE</th>
+                            <th scope="col">DELETE</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -20,7 +20,7 @@
                             <td scope="row">{{ $chat->titulo }}</td>
                             <td>
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $chat->id }}">
-                                    ver
+                                    view
                                 </button>
 
                                 <div class="modal fade" id="exampleModal{{ $chat->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $chat->id }}" aria-hidden="true">
@@ -37,8 +37,8 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">N° Historia</th>
-                                                        <th scope="col">Puntos</th>
+                                                        <th scope="col">No. History</th>
+                                                        <th scope="col">Points</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -51,7 +51,7 @@
                                                             
                                                             <tr class="">
                                                                 <td scope="row">{{ $res[0] }}</td>
-                                                                <td>{{ $res[1]??'' }} puntos</td>
+                                                                <td>{{ $res[1]??'' }} Points</td>
                                                             </tr>
                                                             @endif
             
@@ -67,7 +67,7 @@
                                             
                                         </div>
                                         <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>
                                       </div>
                                     </div>
@@ -76,7 +76,7 @@
 
                             </td>
                             <td class="">
-                                <a class="btn btn-danger" href="{{ route('eliminar',$chat->id) }}" onclick="return confirm('Está seguro de eliminar?')">X</a>
+                                <a class="btn btn-danger" href="{{ route('eliminar',$chat->id) }}" onclick="return confirm('Are you sure to delete?')">X</a>
 
                             </td>
                         </tr>

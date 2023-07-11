@@ -4,12 +4,12 @@
     @csrf
     <input type="hidden" name="id" value="{{ $chat?$chat->id:'' }}">
     <div class="input-group">
-        <input type="text" name="nombre" class="form-control" value="{{ $chat?$chat->titulo:'' }}" placeholder="Ingrese el caso.." aria-label="Recipient's username with two button addons" autofocus>
+        <input type="text" name="nombre" class="form-control" value="{{ $chat?$chat->titulo:'' }}" placeholder="Enter the case.." aria-label="Recipient's username with two button addons" autofocus>
         @if (!$chat)
-            <button class="btn btn-primary" type="submit">GENERAR HISTORIA</button>
+            <button class="btn btn-primary" type="submit">Generate history</button>
         @else
-            <button class="btn btn-success" {{ $chat?'':'disabled' }} type="submit">ESTIMACIÓN</button>
-            <a href="{{ route('dashboard') }}" class="btn btn-primary">NUEVO</a>
+            <button class="btn btn-success" {{ $chat?'':'disabled' }} type="submit">Estimate</button>
+            <a href="{{ route('dashboard') }}" class="btn btn-primary">New</a>
         @endif
 
         
@@ -20,14 +20,14 @@
 
 <div class="card border border-dark my-3">
   @if ($chat)
-    <p><strong>Dame las historias de usuario para un sistema de {{ $chat->titulo }}</strong></p>
+    <p><strong>Give me the user stories for a system {{ $chat->titulo }}</strong></p>
     {{ $chat->detalle_historia }}
     <hr>
 
-    <p><strong>Estimación</strong></p>
+    @if ($chat->detalle_estimacion)
+    <p><strong>Estimate</strong></p>
     {{ $chat->detalle_estimacion }}
-
-
+    @endif
   @endif
 </div>
 

@@ -4,7 +4,8 @@
     @csrf
     <input type="hidden" name="id" value="{{ $chat?$chat->id:'' }}">
     <div class="input-group">
-        <input type="text" name="nombre" class="form-control" value="{{ $chat?$chat->titulo:'' }}" placeholder="Enter the case.." aria-label="Recipient's username with two button addons" autofocus>
+      
+        <input type="text" name="nombre" class="form-control" value="{{ $chat?$chat->titulo:'' }}" placeholder="Enter the process..." aria-label="Recipient's username with two button addons" autofocus>
         @if (!$chat)
             <button class="btn btn-primary" type="submit">Generate history</button>
         @else

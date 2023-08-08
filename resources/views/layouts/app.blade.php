@@ -8,7 +8,19 @@
     <meta name="generator" content="Hugo 0.84.0">
     <title>{{ config('app.name') }}</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+      <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+
+    <style>
+      html *{
+          font-family: 'Borel', cursive;
+      }
+      body{
+          font-family: 'Borel', cursive;
+      }
+  </style>
 
     
 

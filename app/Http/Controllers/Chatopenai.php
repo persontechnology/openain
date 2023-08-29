@@ -34,7 +34,7 @@ class Chatopenai extends Controller
             $cha=chat::find($request->id);
             
 
-            $titulo='Give me the estimation points with the following information '.$cha->detalle_historia.' in the following format: (1: 3 points 2: 1 point 3: 2 points, so on...)';
+            $titulo='Dame los puntos de estimación con la siguente informacion '.$cha->detalle_historia.' en el siguente formato: (1: 3 puntos 2: 1 punto 3: 2 puntos, así sucesivamente...)';
             $result = $client->chat()->create([
                 'model' => 'gpt-3.5-turbo',
                 'messages' => [
@@ -50,7 +50,7 @@ class Chatopenai extends Controller
 
         }else{
             $cha=new chat();
-            $titulo='Give me the user stories for a system '.$request->nombre;
+            $titulo='Dame las historias de usuario para un sistema de '.$request->nombre;
             $result = $client->chat()->create([
                 'model' => 'gpt-3.5-turbo',
                 'messages' => [
